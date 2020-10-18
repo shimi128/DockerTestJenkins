@@ -4,9 +4,9 @@ node('DOTNETCORE'){
 	}
 	stage('Build'){
 		try{
-		sh 'dotnet build ConsoleApp1'
+		sh 'dotnet build ConsoleApp1.csproj'
 		}finally{
-		archiveArtifacts artifacts: 'ConsoleApp1/*.*'
+		archiveArtifacts artifacts: '*.*'
 		}
 	}
 	stage('Test'){
@@ -19,6 +19,6 @@ node('DOTNETCORE'){
 		echo 'Push to deployment'
 	}
 	stage('Archive'){
-		archiveArtifacts artifacts: 'ConsoleApp1/*.*'
+		archiveArtifacts artifacts: '*.*'
 	}
 }

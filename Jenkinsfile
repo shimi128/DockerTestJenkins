@@ -1,6 +1,6 @@
 node('DOTNETCORE'){
 	stage('SCM'){
-		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shimi128/DockerTestJenkins/new/main/ConsoleApp1']]])
+		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shimi128/DockerTestJenkins']]])
 	}
 	stage('Build'){
 		try{
